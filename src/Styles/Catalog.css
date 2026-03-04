@@ -1,0 +1,10 @@
+.catalog-container{
+    width: 50%;
+    height: 100%;
+}
+
+.item-style{
+    border: 1px white solid;
+    margin: 5px;
+    padding: 10px;
+}

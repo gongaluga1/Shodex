@@ -1,0 +1,13 @@
+.search-container{
+    width: 50%;
+    display: flex;
+    padding-right: 10%;
+}
+
+.party{
+    padding: 10%;
+}
+
+.search{
+    padding: 10%;
+}

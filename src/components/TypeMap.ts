@@ -1,0 +1,20 @@
+export const TypeMap: Record<string, number> = {
+    "fire": 0,
+    "grass": 1,
+    "water": 2,
+    "electric": 3,
+    "ice": 4,
+    "fighting": 5,
+    "poison": 6,
+    "ground": 7,
+    "flying": 8,
+    "psychic": 9,
+    "bug": 10,
+    "rock": 11,
+    "ghost": 12,
+    "dragon": 13,
+    "steel": 14,
+    "fairy": 15,
+    "normal": 16,
+    "dark": 17
+} as const;
