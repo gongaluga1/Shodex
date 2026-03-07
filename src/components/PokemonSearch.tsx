@@ -12,7 +12,7 @@ function Search({ party, pushParty, popPartyPokemon }: any) {
 
     async function fetchData() {
         //Takes the Pokemon name from the text field
-        const pokemonName = document.getElementById("name").value.toLowerCase();
+        const pokemonName = document.getElementById("name")?.value.toLowerCase();
 
         //Catches the nothing entered case
         if(pokemonName.length ==0){
@@ -133,7 +133,7 @@ function Search({ party, pushParty, popPartyPokemon }: any) {
     //Adding/Creating a party Pokemon
     async function addPartyPokemon() {
         try {
-            const species = document.getElementById("name").value.toLowerCase();
+            const species = document.getElementById("name")?.value.toLowerCase();
 
             //Reset the name in case the user does not press enter which, in that case, will not reset te name
             setName(species);
