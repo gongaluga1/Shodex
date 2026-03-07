@@ -1,3 +1,5 @@
+//The type map of the type to its index in the type coverage array
+//A really big map
 export const TypeMap: Record<string, number> = {
     "fire": 0,
     "grass": 1,

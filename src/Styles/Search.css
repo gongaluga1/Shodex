@@ -1,5 +1,5 @@
 .search-container{
-    width: 50%;
+    width: 100%;
     display: flex;
     padding-right: 10%;
 }
@@ -9,5 +9,11 @@
 }
 
 .search{
-    padding: 10%;
+    padding-right: 10%;
+}
+
+.partyList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
