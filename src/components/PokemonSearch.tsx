@@ -4,7 +4,7 @@ import '../Styles/Search.css'
 
 function Search({ party, pushParty, popPartyPokemon }: any) {
     const [name, setName] = useState("pikachu");
-    const [type, setType] = useState<any[]>(["electric"]);
+    const [type, setType] = useState<string[]>(["electric"]);
     const [numBattles, setNumBattles] = useState(0);
     const [statCoverage, setStatCoverage] = useState("");
     const [sprite, setSprite] = useState("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png");
@@ -12,7 +12,8 @@ function Search({ party, pushParty, popPartyPokemon }: any) {
 
     async function fetchData() {
         //Takes the Pokemon name from the text field
-        const pokemonName = document.getElementById("name")?.value.toLowerCase();
+        // @ts-ignore
+        const pokemonName = document.getElementById("name").value.toLowerCase();
 
         //Catches the nothing entered case
         if(pokemonName.length ==0){
@@ -29,7 +30,7 @@ function Search({ party, pushParty, popPartyPokemon }: any) {
         }
 
         //Get pokeapi data for type and sprite
-        const tmpType: React.SetStateAction<any[]> = []; //Pokemon can have 2 types
+        const tmpType: React.SetStateAction<string[]> = []; //Pokemon can have 2 types
         result.json().then(json => {
             //Set name, type and sprite
             setName(json.name);
@@ -52,9 +53,10 @@ function Search({ party, pushParty, popPartyPokemon }: any) {
                 //Find the most used ability
                 const abilities = json.pokemon[capitalizeFirstLetter(pokemonName)].abilities
                 let maxKey = "";
-                let maxVal = 0;
+                let maxVal: unknown = 0;
                 for (const [key, value] of Object.entries(abilities)) {
                     console.log(key, value);
+                    // @ts-ignore
                     if(value>maxVal){
                         maxVal = value;
                         maxKey = key;
@@ -67,6 +69,7 @@ function Search({ party, pushParty, popPartyPokemon }: any) {
                 setNumBattles(0);
                 setStatCoverage("No Data Found");
                 setAbility("No Data Found");
+                console.log("No data on Pokemon"+e);
             }
         })
     }
@@ -133,7 +136,8 @@ function Search({ party, pushParty, popPartyPokemon }: any) {
     //Adding/Creating a party Pokemon
     async function addPartyPokemon() {
         try {
-            const species = document.getElementById("name")?.value.toLowerCase();
+            // @ts-ignore
+            const species = document.getElementById("name").value.toLowerCase();
 
             //Reset the name in case the user does not press enter which, in that case, will not reset te name
             setName(species);
