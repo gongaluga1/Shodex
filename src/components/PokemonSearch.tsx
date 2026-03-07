@@ -2,9 +2,9 @@ import React from "react";
 import {useState} from "react";
 import '../Styles/Search.css'
 
-function Search({ party, pushParty, popPartyPokemon }: never) {
+function Search({ party, pushParty, popPartyPokemon }: any) {
     const [name, setName] = useState("pikachu");
-    const [type, setType] = useState<never[]>(["electric"]);
+    const [type, setType] = useState<any[]>(["electric"]);
     const [numBattles, setNumBattles] = useState(0);
     const [statCoverage, setStatCoverage] = useState("");
     const [sprite, setSprite] = useState("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png");
@@ -29,7 +29,7 @@ function Search({ party, pushParty, popPartyPokemon }: never) {
         }
 
         //Get pokeapi data for type and sprite
-        const tmpType: React.SetStateAction<never[]> = []; //Pokemon can have 2 types
+        const tmpType: React.SetStateAction<any[]> = []; //Pokemon can have 2 types
         result.json().then(json => {
             //Set name, type and sprite
             setName(json.name);
