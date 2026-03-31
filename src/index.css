@@ -1,7 +1,7 @@
 /*Style for whole root, body of html*/
 :root {
   font-family: Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
+  color-scheme: dark;
   /*Styling background img*/
   background-image: url(./assets/375px-Cerulean_Cave_inside_PO.png);
   background-size: cover;
@@ -34,19 +34,6 @@ button:hover {
 
 button:focus, button:focus-visible {
   outline: 3px auto white;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 /*Container for all components*/
